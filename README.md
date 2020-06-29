@@ -6,3 +6,5 @@ purchase merchandise with premium points, select seats for shows in graphical re
 functionalities are implemented among other: creating users, blocking/unblocking users, creating events, creating news, pagination, search for users.
 
 This project was developed in Java (Spring and Hibernate) in the backend, and Angular was used for the frontend side.
+
+More about user requirements is found in the file "Ticketline 4 - Szenarios and User Stories"
