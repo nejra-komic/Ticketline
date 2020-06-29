@@ -7,4 +7,4 @@ functionalities are implemented among other: creating users, blocking/unblocking
 
 This project was developed in Java (Spring and Hibernate) in the backend, and Angular was used for the frontend side.
 
-More about user requirements is found in the file "Ticketline 4 - Szenario and User Stories.pdf"
+More about user requirements can be found in the file "Ticketline 4 - Szenario and User Stories.pdf"
