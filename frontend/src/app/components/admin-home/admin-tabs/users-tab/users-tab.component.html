@@ -1,0 +1,104 @@
+<div class="table-container all-height" #table>
+  <div fxLayout = "row">
+    <mat-form-field class="input-wrapper">
+      <mat-label>In User code suchen</mat-label>
+      <input matInput
+             name="searchUserCode" [(ngModel)]="searchUser.userCode">
+    </mat-form-field>
+    <mat-form-field class="input-wrapper">
+      <mat-label>In First name suchen</mat-label>
+      <input matInput
+             name="searchFirstName" [(ngModel)]="searchUser.firstName">
+    </mat-form-field>
+    <mat-form-field class="input-wrapper">
+      <mat-label>In Last name suchen</mat-label>
+      <input matInput
+             name="searchLastName" [(ngModel)]="searchUser.lastName">
+    </mat-form-field>
+    <mat-form-field class="input-wrapper">
+      <mat-label>In Email suchen</mat-label>
+      <input matInput
+             name="searchEmail" [(ngModel)]="searchUser.email">
+    </mat-form-field>
+  </div>
+<div>
+  <button mat-raised-button (click)="loadAllUsersByParameters()" style="margin-right:10px"> Suchen</button>
+  <button mat-raised-button (click)="loadAllUsers()" style="margin-right: 40%">Alle Users</button>
+
+  <mat-checkbox color = "primary" labelPosition = 'before' [(ngModel)]='showBlocked' (change)='applyBlocked(users)'>Nur Blocked Kunde zeigen</mat-checkbox>
+</div>
+  <button mat-raised-button color = "basic" (click)="createNewUser()" style="margin-left: 80%;margin-bottom: 1%">User Erstellen</button>
+
+<div class="table">
+  <mat-table #table [dataSource]="dataSource" matSort>
+
+      <!--USERCODE-->
+      <ng-container matColumnDef="userCode">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>User Code</mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="userDetails(element)">
+          <div class="cell-padding">
+            {{element?.userCode}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!--FIRST NAME-->
+      <ng-container matColumnDef="firstName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Vorname</mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="userDetails(element)">
+          <div class="cell-padding">
+            {{element?.firstName}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!--LAST NAME-->
+      <ng-container matColumnDef="lastName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Nachname</mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="userDetails(element)">
+          <div class="cell-padding">
+           {{element?.lastName}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!--EMAIL-->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>E-Mail</mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="userDetails(element)">
+          <div class="cell-padding">
+            {{element?.email}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+    <!--BLOCK-->
+    <ng-container matColumnDef="block">
+      <mat-header-cell *matHeaderCellDef ></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <div class="cell-padding">
+          <button mat-raised-button color = "warn" *ngIf="element?.blocked === false && element?.admin === false" (click)="blockUser(element)" style="margin-left: 15%">Block</button>
+          <button mat-raised-button color = "green" *ngIf="element?.blocked === true && element?.admin === false" (click)="unblockUser(element)">Unblock</button>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+      <!--PASSWORD RESET-->
+      <ng-container matColumnDef="password">
+        <mat-header-cell *matHeaderCellDef ></mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div class="cell-padding">
+            <button mat-raised-button color = "primary" (click)="changePassword(element)">Password Zurücksetzen</button>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row;
+             columns: displayedColumns;"></mat-row>
+    </mat-table>
+  <mat-paginator showFirstLastButtons [pageSizeOptions]="[10, 25, 50]"></mat-paginator>
+</div>
+</div>

@@ -1,0 +1,52 @@
+.center-block {
+  max-width: 750px;
+  margin: 0 125px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  border-top: 1px solid black;
+}
+
+.edit-button-wrapper {
+  padding-top: 25px;
+}
+
+.password-button-wrapper {
+  padding-bottom: 15px;
+  padding-left: 80%;
+}
+
+.delete-button-wrapper {
+  padding-top: 25px;
+  padding-left: 45%;
+}
+
+
+.bottom-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+@media screen and (max-width: 1080px) {
+
+  .center-block {
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  .bottom-button-wrapper {
+    width: 5%;
+    flex-direction: column;
+  }
+
+  .password-button-wrapper {
+    padding-left: 15%;
+  }
+
+  .delete-button-wrapper {
+    padding-top: 10px;
+    padding-left: 5%;
+  }
+}
+

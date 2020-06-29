@@ -1,0 +1,85 @@
+<div class="table-container all-height" #table>
+  <div fxLayout = "row">
+    <mat-form-field class="input-wrapper">
+      <mat-label>In Event code suchen</mat-label>
+      <input matInput
+             name="searchEventCode" [(ngModel)]="searchEvent.eventCode">
+    </mat-form-field>
+    <mat-form-field class="input-wrapper">
+      <mat-label>In Event name suchen</mat-label>
+      <input matInput
+             name="searchName" [(ngModel)]="searchEvent.name">
+    </mat-form-field>
+    <mat-form-field class="input-wrapper">
+      <mat-label>Beginn Von</mat-label>
+      <input matInput [matDatepicker]="picker1" (dateInput)="addStart('input', $event)" (dateChange)="addStart('change', $event)">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="input-wrapper">
+      <mat-label>Beginn Bis</mat-label>
+      <input matInput [matDatepicker]="picker2" (dateInput)="addEnd('input', $event)" (dateChange)="addEnd('change', $event)">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button (click)="searching=true;loadAllEventsByParameters();" style="margin-right:10px"> Suchen</button>
+    <button mat-raised-button (click)="searching=false;loadAllEvents();" style="margin-right: 40%">Alle Events</button>
+  </div>
+
+  <button mat-raised-button color = "basic" style="margin-left: 80%;margin-bottom: 1%" (click)="createNewEvent()">Event Erstellen</button>
+
+  <div class="table">
+    <mat-table #table [dataSource]="dataSource" matSort>
+
+      <!--EVENTCODE-->
+      <ng-container matColumnDef="eventCode">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Event Code</mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="eventDetails(element)">
+          <div class="cell-padding">
+            {{element?.eventCode}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!--NAME-->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="eventDetails(element)">
+          <div class="cell-padding">
+            {{element?.name}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!--STARTDATE-->
+      <ng-container matColumnDef="startsAt">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Beginn</mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="eventDetails(element)">
+          <div class="cell-padding">
+            {{element?.startsAt | date}}
+          </div>
+        </mat-cell>
+      </ng-container>
+      <!--ENDDATE-->
+      <ng-container matColumnDef="endsAt">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Ende</mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="eventDetails(element)">
+          <div class="cell-padding">
+            {{element?.endsAt | date}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row;
+             columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[10, 25, 50]"
+                   [pageSize] = "pageSize"
+                   [hidePageSize]="true"
+                   (page) = "pageEvent($event)"></mat-paginator>
+  </div>
+</div>
+

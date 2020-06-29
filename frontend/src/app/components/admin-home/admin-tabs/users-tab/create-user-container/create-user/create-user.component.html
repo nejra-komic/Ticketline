@@ -1,0 +1,35 @@
+<div class="user-wrapper">
+  <div fxLayout="row" class="user-line">
+    <div class="link opacity" (click)="usersNavigate()">
+      <span class="bread-crumps">Users</span>
+    </div>
+
+    <div class="bread-crumps user-padding">
+      > User Erstellen
+    </div>
+  </div>
+</div>
+<div fxLayout="row" >
+  <div class="administration-tabs">
+    <app-admin-side-menu></app-admin-side-menu>
+  </div>
+  <div class="center-block">
+    <app-error-notification *ngIf="error" [error]="error" [showStatus]="false"></app-error-notification>
+    <div>
+      <app-create-user-form [user]="wrapper.model">
+        <div fxLayout="row" class="buttons-wrapper">
+          <div class="save-button-wrapper">
+            <button id="user-password-save-button" mat-raised-button
+                (click)="saveUser()">Erstellen
+            </button>
+          </div>
+          <div class="cancel-button-wrapper">
+            <button id="user-password-cancel-button" mat-raised-button color = "warn"
+                (click)="cancelCreateUserMode()">Abbrechen
+            </button>
+          </div>
+        </div>
+      </app-create-user-form>
+    </div>
+  </div>
+</div>

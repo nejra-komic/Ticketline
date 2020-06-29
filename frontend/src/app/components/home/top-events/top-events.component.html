@@ -1,0 +1,101 @@
+<div class="title-button" routerLink="/top-ten-events">
+  <div class="row col-12 align-items-center">
+    <h1 class="title-headline">Top Veranstaltungen</h1>
+    <i class="fa fa-caret-right title-caret"></i>
+  </div>
+</div>
+
+<app-error-notification *ngIf="error" [error]="error"></app-error-notification>
+
+<div *ngIf="events && events.length > 0">
+  <!--Carousel Wrapper-->
+  <div id="top-ten-events-carousel" class="my-slider carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Indicators-->
+    <!--<ol class="carousel-indicators">
+      <li data-target="#top-ten-events-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#top-ten-events-carousel" data-slide-to="1"></li>
+      <li data-target="#top-ten-events-carousel" data-slide-to="2"></li>
+    </ol>-->
+
+    <!--Inner Carousel-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--Carousel Items-->
+      <div class="carousel-item"
+           *ngFor="let threeEvents of events; index as i"
+           [class.active]="threeEvents === events[0]">
+        <div class="row" style="min-height: 415px">
+
+          <!--The three Events inside a Carousel Item-->
+          <div class="zoom"
+               *ngFor="let event of threeEvents; index as j"
+               [class.col-md-6]="event === threeEvents[0]"
+               [class.col-md-3]="event !== threeEvents[0]"
+               [class.clearfix]="event !== threeEvents[0]"
+               [class.d-none]="event !== threeEvents[0]"
+               [class.d-md-block]="event !== threeEvents[0]"
+               routerLink="/events/{{event.eventCode}}" style="
+            padding-bottom: 15px;
+            ">
+            <div class="card">
+              <img class="card-img-top img-fluid"
+                   [class.image-crop-big]="event === threeEvents[0]"
+                   [class.image-crop-small]="event !== threeEvents[0]"
+                   src="{{event.photo}}">
+              <div class="card-body" style="padding: 20px 25px 25px;min-height: 90px;">
+                <div class = "card-title row">
+                  <div class="col-sm extra-pad card-title-font prevent-overflow-inline" style="margin-left: 0px">
+                    <div class="container" style="padding: 0px">
+                      <div class="row" style="padding: 0px; margin-top: -2px">
+                        <div class="col-1" style="padding-left: 10px; ">
+                          <a style="font-size: 32px;">#{{3*i + j +1}}</a>
+                        </div>
+                        <div class="col-10">
+                          <div class="card-title-font" style="margin-left: 15px; ">{{event.name}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col text-right" *ngIf="event === threeEvents[0]">
+                    <button class="btn default event-button prevent-overflow-inline pull-right"
+                            routerLinkActive="active" style="height: 50px">
+                      <p style="font-size: 20px; margin-bottom: 0px;">Tickets ab {{event.startPrice}}€</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/Inner Carousel-->
+
+    <!--Controls-->
+    <a class="carousel-button-left left carousel-control-prev" href="#top-ten-events-carousel" data-slide="prev">
+      <div class="col-12 text-right">
+        <a class="btn carousel-visual-button">
+          <div  style="padding-top: 4px">
+            <span class="fa fa-chevron-left"></span>
+          </div>
+        </a>
+      </div>
+    </a>
+    <a class="carousel-button-right right carousel-control-next" href="#top-ten-events-carousel" data-slide="next">
+      <div class="col-12 text-left">
+        <a class="btn carousel-visual-button">
+          <div  style="padding-top: 4px">
+            <span class="fa fa-chevron-right"></span>
+          </div>
+        </a>
+      </div>
+    </a>
+
+
+  </div>
+</div>
+
+<app-spinner *ngIf="events === undefined"></app-spinner>
+

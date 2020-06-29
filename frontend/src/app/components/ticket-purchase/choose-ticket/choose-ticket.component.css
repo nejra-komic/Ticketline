@@ -1,0 +1,121 @@
+.numberOfTickets {
+  max-width: 15%;
+}
+
+.section-select {
+  max-width: 23%;
+}
+
+.seat-select {
+  margin-left: 26px;
+  max-width: 20%;
+}
+
+.ticketPlace {
+  display:flex;
+}
+
+#ticketPlace {
+  max-width: 15%;
+}
+
+
+.choosing-title {
+  font-family: Segue UI, Roboto, "Helvetica Neue", sans-serif !important;
+  font-size: 25px;
+  font-weight: bold;
+  padding-right: 40px;
+  color: #212529;
+}
+
+.choosing-subtitle {
+  font-family: Segue UI, Roboto, "Helvetica Neue", sans-serif !important;
+  font-size: 20px;
+  padding-right: 20px;
+  color: #212529;
+}
+
+.row {
+  margin: 0px;
+}
+
+.gap {
+  padding: 30px;
+}
+
+.seat-select-container {
+  padding-left: 40px;
+  margin-bottom: 50px;
+}
+
+
+.page-subtitle {
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  font-weight: bold;
+  color: #212529;
+}
+
+.buy-button {
+  height: 75px;
+  width: 350px;
+  transition: .2s;
+  margin: 0px 0px 20px;
+}
+
+.reserve-button {
+  background-color: #A1A1A1;
+  height: 75px;
+  width: 350px;
+  transition: .2s;
+  padding: 0px;
+  margin: 0px;
+}
+
+.reserve-button:hover {
+  background-color: #909090;
+}
+
+/*ddd*/
+
+.buy-button:hover {
+  background-color: #1f5993;
+}
+
+.button-font {
+  font-size: 25px;
+  color: white;
+}
+
+.my-select {
+  background-color: #EEEEFF;
+}
+
+.selecting-row {
+  height: 50px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.price-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #212529;
+  margin-bottom: 30px;
+}
+
+.modal-buttons {
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
+.my-custom-scrollbar {
+  position: relative;
+  max-width: 100%;
+  height: 100px;
+  overflow: auto;
+}
+

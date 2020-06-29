@@ -1,0 +1,103 @@
+<div class="center-block">
+  <!--User Type-->
+  <button mat-raised-button color="primary"  (click)='changeUserType()' style="margin-bottom: 5%"> Usertyp Ändern </button>
+
+  <div fxLayout="row" class="info-wrapper">
+    <img src="assets/images/user/person.svg" alt="">
+    <div class="info">
+      <div class="info-label">Usertyp</div>
+      <div class="info-field status-label" *ngIf="user.admin">Administrator</div>
+      <div class="info-field status-label" *ngIf="!user.admin" style="margin-top: 2%">Kunde</div>
+    </div>
+  </div>
+  <!--FIRST NAME-->
+  <div fxLayout="row" class="info-wrapper">
+    <img src="assets/images/user/person.svg" alt="">
+    <div class="info">
+      <div class="info-label">Vorname</div>
+    </div>
+  </div>
+  <mat-form-field class="mat-form-field" >
+    <input
+      id="userInfoForm_inputFirstName"
+      matInput
+      name="firstName"
+      required
+      maxlength="255"
+      [(ngModel)]="user.firstName">
+    <mat-error *ngIf="!user.firstName">Vorname ist erforderlich!</mat-error>
+  </mat-form-field>
+
+  <!--LAST NAME-->
+  <div fxLayout="row" class="info-wrapper">
+    <img src="assets/images/user/person.svg" alt="">
+    <div class="info">
+      <div class="info-label">Nachname</div>
+    </div>
+  </div>
+  <mat-form-field class="mat-form-field" >
+    <input
+      id="userInfoForm_inputLastName"
+      matInput
+      name="lastName"
+      required
+      maxlength="255"
+      [(ngModel)]="user.lastName">
+    <mat-error *ngIf="!user.lastName">Nachname ist erforderlich!</mat-error>
+  </mat-form-field>
+
+  <!--EMAIL-->
+  <div fxLayout="row" class="info-wrapper">
+    <img src="assets/images/user/email.svg" alt="">
+    <div class="info">
+      <div class="info-label">E-Mail</div>
+    </div>
+  </div>
+  <mat-form-field class="mat-form-field" >
+    <input
+      id="userInfoForm_inputEmail"
+      matInput
+      name="lastName"
+      required
+      maxlength="255"
+      [(ngModel)]="user.email">
+    <mat-error *ngIf="!user.email">E-Mail ist erforderlich!</mat-error>
+  </mat-form-field>
+
+  <!--PASSWORD-->
+  <div fxLayout="row" class="info-wrapper">
+    <img src="assets/images/user/loupe.svg" alt="">
+    <div class="info">
+      <div class="info-label">Passwort</div>
+    </div>
+  </div>
+  <mat-form-field class="mat-form-field" >
+    <input
+      id="userInfoForm_inputPassword"
+      matInput
+      name="password"
+      required
+      maxlength="255"
+      [(ngModel)]="password" type="password" (change)="passwordChange()">
+    <mat-error *ngIf="!password">Passwort ist erforderlich!</mat-error>
+    <mat-error *ngIf="password < 8">Passwort ist zu kurz!</mat-error>
+    <mat-hint align="start">Passwort muss länger als 8 Zeichen</mat-hint>
+  </mat-form-field>
+
+  <!--BIRTHDATE-->
+  <div fxLayout="row" class="info-wrapper">
+    <img src="assets/images/user/birth.svg" alt="">
+    <div class="info">
+      <div class="info-label">Geburtsdatum</div>
+    </div>
+  </div>
+  <mat-form-field>
+    <mat-label>Wählen Sie ein Datum aus</mat-label>
+    <input required matInput [matDatepicker]="picker" [max]="maxDate" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="!user.birthday">Geburtsdatum ist erforderlich!</mat-error>
+  </mat-form-field>
+
+  <ng-content></ng-content>
+</div>

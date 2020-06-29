@@ -1,0 +1,51 @@
+.mat-stepper-horizontal {
+  background-color: #FBFBFB;
+  margin-top: 8px;
+  border-radius: 20px 20px 20px 20px;
+
+
+}
+
+.mat-form-field {
+  margin-top: 16px;
+  background-color: #FBFBFB;
+  border-radius: 20px 20px 20px 20px;
+
+}
+
+.btn-secondary{
+  padding-bottom: 10px;
+}
+
+.page-title {
+  padding-top: 5px;
+  font-size: 22px;
+  margin: 0px;
+  font-weight: bold;
+}
+
+.divider {
+  height: 40px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #FFFFFF;
+  border-left: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.preenchimento-incompleto {
+  background-color: black !important;
+}
+
+.preenchimento-ok {
+  background-color: greenyellow !important;
+}
+
+.blueee {
+  background-color: #2771BB!important;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #0e2e62!important
+}

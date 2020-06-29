@@ -1,0 +1,107 @@
+.artists-title {
+  font-family: Segue UI, Roboto, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  max-width: 100%;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.event {
+  margin-left: 45px;
+}
+
+.eventName {
+  max-width: 50%;
+  height: auto;
+  float: left;
+}
+
+.eventInfo {
+  float: left;
+  height: auto;
+}
+
+.sub-headline {
+  /* padding-top: 10px; */
+}
+
+.img-fluid {
+  display: inline-flex;
+  float: left;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #888888;
+}
+
+.image-crop-big {
+  object-fit: cover; /* scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 400px;
+  width: 100%;
+}
+
+.h3 {
+  padding-top: 15px;
+  max-width: 100%;
+  height: auto;
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  max-width: 100%;
+  height: 276px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+.page-title {
+  padding-left: 20px;
+  margin: 0px;
+}
+
+.description-title {
+  font-family: Segue UI, Roboto, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  max-width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.description-text {
+  font-family: Segue UI, Roboto, "Helvetica Neue", sans-serif;
+  white-space: pre-wrap;
+  line-height: 200%;
+  font-size: 18px;
+}
+
+.card-body {
+  padding-top: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+
+.page-title {
+  padding-left: 20px;
+  margin: 0px;
+  font-size: 40px;
+}
+
+.details-button {
+  width: 110px;
+  height: 54px;
+}
+
+a {
+  font-size: 18px;
+  color: #202020;
+}
+
+.header-row {
+  padding-top: 18px;
+}

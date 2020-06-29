@@ -1,0 +1,26 @@
+.title-headline {
+  color: white;
+  font-size: 60px!important;
+}
+
+.row-headline {
+  margin-top: 60px;
+}
+
+
+.rail-select {
+  width: 10%;
+  background-color: transparent;
+  color: white;
+  font-size: 23px;
+}
+
+select {
+  background-color: transparent;
+  color: white;
+  font-size: 23px;
+}
+
+.form-control {
+  padding-right: 10px;
+}

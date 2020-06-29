@@ -1,0 +1,89 @@
+.h3 {
+  background-color: red;
+}
+
+.h-divider{
+  margin-top:160px;
+  margin-bottom:40px;
+  height:1px;
+  width:100%;
+  border-top:1px solid;
+  border-color: #707070;
+  color: #707070;
+}
+
+label {
+  font-size: 20px;
+}
+
+.page-title {
+  padding-left: 20px;
+  margin: 0px;
+}
+
+.nav-pills {
+  margin: 0px!important;
+  border-radius: 0px;
+}
+
+.nav-pills > li > a {
+  width: 120px;
+  background-color: transparent;
+  color: white;
+}
+
+.nav-pills > li > a.active {
+  background: rgba(100%, 100%, 100%, 0.25);
+  border-bottom-width: 3px;
+  border-bottom-color: white;
+  border-bottom-style: solid;
+  border-radius: 0px;
+}
+
+.nav-pills > li > a > div > span {
+  padding-right: 55px;
+  padding-left: 55px;
+  height: 32px;
+  padding-top: 8px;
+}
+
+.nav-pills > li > a.active > div > span {
+  padding-right: 55px;
+  padding-left: 55px;
+  height: 30px;
+  padding-top: 8px;
+}
+
+.nav-pills > li > a.active:hover {
+  background: rgba(100%, 100%, 100%, 0.25);
+  border-bottom-width: 3px;
+  border-bottom-color: white;
+  border-bottom-style: solid;
+  border-radius: 0px;
+}
+
+.nav-pills > li > a:hover {
+  background: rgba(100%, 100%, 100%, 0.10);
+  border-bottom-width: 3px;
+  border-bottom-color: white;
+  border-radius: 0px;
+}
+
+.nav-pill-font {
+  font-family: Segue UI, Roboto, "Helvetica Neue", sans-serif !important;
+  font-size: 20px;
+}
+
+.tab-divider {
+  border-right: 2px white solid;
+}
+
+.search-navigation {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.page-link{
+  font-size: 17px;
+  width: auto;
+}

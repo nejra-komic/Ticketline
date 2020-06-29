@@ -1,0 +1,97 @@
+
+.card-body, .card {
+  background-color: white;
+  color: black;
+}
+
+.card-body {
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card-title {
+  display: -webkit-flex;
+}
+
+.card-title-font {
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+  font-family: Segue UI, Roboto, "Helvetica Neue", sans-serif;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-height: 30px; /* fallback */
+  height: 60px; /* fallback */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+.card-text-font {
+  color: black;
+  font-size: 20px;
+  font-family: Segue UI, Roboto, "Helvetica Neue", sans-serif;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-height: 30px; /* fallback */
+  height: 90px; /* fallback */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card {
+  margin: 10px;
+  padding-bottom: 0px;
+}
+
+.zoom {
+  transition: transform .2s; /* Animation */
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.zoom:hover {
+  transform: scale(1.05);
+}
+
+.fa-star {
+  color: #ff9800;
+  font-size: 20px;
+}
+
+.card-deck {
+  padding: 0px;
+  padding-top: 15px;
+}
+
+.detailsText {
+  color: cornflowerblue;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.detailsText:hover {
+  color: cornflowerblue;
+}
+
+.card-img-top {
+  object-fit: cover; /* scale the image */
+  object-position: center; /* Center the image within the element */
+  width: 100%;
+  height: 450px;
+  margin: 0px;
+  border-radius: 10px 10px 0px 0px;
+  filter: grayscale(20%) contrast(110%);
+  cursor: pointer;
+}
+
+.infoAboutPremium {
+  text-align: right;
+}
+
+.merch-row {
+  margin: 0px;
+}

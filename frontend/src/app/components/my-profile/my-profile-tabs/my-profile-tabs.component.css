@@ -1,0 +1,40 @@
+.profile-wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.profile-tabs {
+  /* UI Properties */
+  background: #212529 0% 0% no-repeat padding-box;
+  box-shadow: 6px 3px 6px #00000029;
+  border-radius: 0px 0px 0px 20px;
+  opacity: 1;
+  width: 25%;
+}
+
+
+@media screen and (min-width: 700px) and (max-width: 1080px) {
+
+  .profile-tabs {
+    width: 30%;
+  }
+
+  .profile-content {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  .profile-tabs {
+    width: 40%;
+  }
+
+  .profile-content {
+    width: 50%;
+  }
+}
+
+.page-title {
+  padding-top: 18px;
+}

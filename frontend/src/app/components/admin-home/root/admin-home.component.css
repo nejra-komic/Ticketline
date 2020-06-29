@@ -1,0 +1,15 @@
+
+:host {
+  display: block;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+.hidden-x {
+  overflow-x: hidden;
+}
+
+.gap {
+  padding: 30px;
+}

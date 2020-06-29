@@ -1,0 +1,58 @@
+<app-error-notification *ngIf="error" [error]="error"></app-error-notification>
+
+<form [formGroup]="firstFormGroup" *ngIf="eventLocation">
+  <div class="container">
+    <!-- page subtitle -->
+    <div class="page-subtitle">Tickets auswählen</div>
+    <div class="row">
+      <!-- Seat Plan -->
+      <div class="col-8">
+        <app-seating-plan [show]="show" [sections]="eventLocation.sections" [selectedSeats]="selectedSeats"></app-seating-plan>-
+      </div>
+      <!-- Ticket Info and/or Selection -->
+      <div class="col-4">
+        <!-- Section and Seat Title -->
+        <div class="choosing-title align-items-center row">Gewählte Sitzplätze</div>
+        <!-- Section and Seat Info and/or Selection -->
+            <div class="table-wrapper-scroll-y my-custom-scrollbar" style="padding: 10px">
+              <table class="table table-responsive-lg table-hover mb-0">
+              <tbody *ngFor="let seat of selectedSeats">
+              <tr>
+                <td>Sektor {{getSectionNameById(seat.sectionId)}}, Reihe {{seat.seatRow}}, Platz {{seat.seatColumn}}</td>
+              </tr>
+              </tbody>
+            </table>
+            </div>
+        <!-- Price Overview -->
+        <div class="price-title align-items-center row">
+          Preis:
+          <div class="gap">{{this.price}} EUR</div>
+        </div>
+        <!-- Purchase/Reserve Buttons -->
+        <button (click)="nextStep()" class="buy-button default btn row align-items-center"><a class="button-font">Jetzt kaufen</a></button>
+        <button class="reserve-button default btn row align-items-center" data-toggle="modal" data-target="#exampleModal"><div class="col button-font">Reservieren</div></button>
+
+
+        <!-- Modal (Pop up when clicking reserve) -->
+        <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Willst du dieses Ticket reservieren?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn-secondary btn" data-dismiss="modal">Abbrechen</button>
+                <button matStepperNext (click)="reserve()" type="button" class="btn-primary btn" data-dismiss="modal">Ja</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>

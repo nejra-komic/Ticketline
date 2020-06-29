@@ -1,0 +1,55 @@
+<!--
+Mobile Navbar
+<nav class="navbar-custom navbar-expand-lg d-flex" *ngIf="isMobileLayout">
+  <div class="container-fluid">
+    <div class="row header-row">
+      <div class="navbar-header">
+        <div class="row">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContentMobile" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
+            <span class="navbar-toggler-icon fas fa-bars"></span>
+          </button>
+          <div class= "col">
+            <a class="navbar-brand ml-lg-5" routerLink="/administration">Ticketline</a>
+          </div>
+          <div class="col text-right" style="margin-top: 36px; padding-right: 0px; ">
+            <button class="btn btn.default logout" routerLink="/" (click)="authService.logoutUser()" >
+              <span class="fas fa-sign-out-alt"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+Navbar for screens bigger than 1000px
+<nav class="navbar-custom navbar-expand-lg d-flex" *ngIf="!isMobileLayout">
+  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
+    <span class="navbar-toggler-icon fas fa-bars" style="color: white;"><i class=""></i></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+    <a class="navbar-brand ml-lg-5" routerLink="/home">Ticketline</a>
+    <ul class="navbar-nav ml-auto  align-items-center">
+
+    </ul>
+    <div style="padding-right: 50px;">
+      <button class="btn btn.default logout" routerLink="/" (click)="authService.logoutUser()" >
+        <span class="fas fa-sign-out-alt"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+-->
+
+
+<!-- New, Angular-Material fitting Toolbar Header -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button routerLink="/home">Ticketline</button>
+    <span class="example-spacer"></span>
+    <button routerLink="/" (click)="authService.logoutUser()"><i class="fas fa-sign-out-alt"></i></button>
+  </mat-toolbar-row>
+</mat-toolbar>

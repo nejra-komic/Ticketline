@@ -1,0 +1,58 @@
+<div class="card-header">
+  <div class="container" style="margin: 0; max-width: 1320px">
+    <div class="row header-row">
+      <div class="col-8">
+        <h1 class="mb-0 ml-3 page-title">Ort suchen</h1>
+      </div>
+      <div class="col advanced-search mr-4">
+        <a routerLink="/search/location-advanced">>> Erweiterte Suche</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card-body">
+  <app-error-notification *ngIf="error" [error]="error"></app-error-notification>
+  <div *ngIf="!error && currentPage">
+    <div *ngIf="currentPage.length > 0">
+      <div *ngFor="let l of currentPage">
+        <div class="row location-row">
+          <div class="location-block">
+            <div class="row">
+              <div class="col-9 col-sm-8">
+                <div class="location-details pl-5 prevent-overflow-inline" style="margin-top: 45px; height: 80px">
+                  {{l.name}}, {{l.plz}} {{l.city}}
+                </div>
+              </div>
+              <div class="col-3 col-sm-4 pr-5">
+                <button (click)="searchShows(l)" class="btn default location-button align-middle" style="margin-top: 25px;">
+                  Aufführungen
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="previousPage || nextPage">
+        <nav class="search-navigation">
+          <ul class="pagination">
+            <li class="page-item" *ngIf="previousPage.length !== 0 && currentPageIndex > 0" style="margin-right: auto">
+              <a class="page-link" (click)="loadPreviousPage()">
+                <span aria-hidden="true">&laquo; Zurück</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item" *ngIf="nextPage.length !== 0" style="margin-left: auto">
+              <a class="page-link" (click)="loadNextPage()">
+                <span aria-hidden="true">Weiter &raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <p *ngIf="currentPage && currentPage.length == 0" style="font-size: 20px; padding-top: 40px; text-align: center">Es konnten keine Veranstaltungsorte mit diesen Kriterien gefunden werden.</p>
+  </div>
+  <app-spinner *ngIf="currentPage === undefined">
+  </app-spinner>
+</div>
